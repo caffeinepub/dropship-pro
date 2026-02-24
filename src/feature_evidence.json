@@ -1,0 +1,134 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-product-catalog-system-where-users-can-browse-and-search-products-available-for-drop-shipping-including-product-name-description-supplier-information-wholesale-price-and-suggested-retail-price",
+      "featureTitle": "Create a product catalog system where users can browse and search products available for drop shipping, including product name, description, supplier information, wholesale price, and suggested retail price",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/components/ProductSearch.tsx",
+        "frontend/src/hooks/useProducts.ts",
+        "frontend/src/pages/Products.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-order-management-functionality-allowing-users-to-create-track-and-manage-customer-orders-with-order-status-tracking-pending-processing-shipped-delivered",
+      "featureTitle": "Implement order management functionality allowing users to create, track, and manage customer orders with order status tracking (pending, processing, shipped, delivered)",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CreateOrderForm.tsx",
+        "frontend/src/components/OrderCard.tsx",
+        "frontend/src/components/OrderStatusBadge.tsx",
+        "frontend/src/hooks/useOrders.ts",
+        "frontend/src/pages/Orders.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-supplier-management-interface-to-add-edit-and-view-supplier-information-including-name-contact-details-and-associated-products",
+      "featureTitle": "Build a supplier management interface to add, edit, and view supplier information including name, contact details, and associated products",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AddSupplierForm.tsx",
+        "frontend/src/components/SupplierCard.tsx",
+        "frontend/src/hooks/useSuppliers.ts",
+        "frontend/src/pages/Suppliers.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-dashboard-displaying-key-metrics-including-total-products-active-orders-pending-orders-and-total-revenue",
+      "featureTitle": "Create a dashboard displaying key metrics including total products, active orders, pending orders, and total revenue",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/MetricCard.tsx",
+        "frontend/src/hooks/useDashboardMetrics.ts",
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-profit-calculation-showing-the-difference-between-wholesale-and-retail-prices-for-each-product-and-order",
+      "featureTitle": "Implement profit calculation showing the difference between wholesale and retail prices for each product and order",
+      "files": [
+        "frontend/src/components/OrderCard.tsx",
+        "frontend/src/components/ProductCard.tsx",
+        "frontend/src/utils/profitCalculations.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-a-modern-professional-interface-with-a-clean-visual-theme-that-conveys-trust-and-efficiency-for-e-commerce-business-management-using-a-sophisticated-color-palette-avoid-blue-and-purple-with-clear-typography-and-intuitive-navigation",
+      "featureTitle": "Design a modern, professional interface with a clean visual theme that conveys trust and efficiency for e-commerce business management, using a sophisticated color palette (avoid blue and purple) with clear typography and intuitive navigation",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

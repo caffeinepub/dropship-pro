@@ -1,0 +1,212 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "DropShip Pro Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create product catalog with browse and search functionality",
+      "acceptanceCriteria": [
+        "Users can view a list of available products",
+        "Each product displays name, description, supplier, wholesale price, and suggested retail price",
+        "Users can search products by name or description",
+        "Product data is stored persistently in the backend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Products.tsx",
+          "operation": "create",
+          "description": "Create products page that fetches and displays all products using the getAllProducts backend method. Include search functionality that calls searchProducts backend method. Display product name, description, supplier information (fetched via supplierId), wholesale price, suggested retail price, and calculated profit margin."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "create",
+          "description": "Create product card component to display individual product details including name, description, supplier name, wholesale price, retail price, and profit margin in a visually appealing card layout using Tailwind CSS. Reference the generated package icon at frontend/public/assets/generated/package-icon.dim_128x128.png as a visual element."
+        },
+        {
+          "path": "frontend/src/components/ProductSearch.tsx",
+          "operation": "create",
+          "description": "Create search component with input field that triggers searchProducts backend method as users type, debouncing requests for performance."
+        },
+        {
+          "path": "frontend/src/hooks/useProducts.ts",
+          "operation": "create",
+          "description": "Create custom hook to manage product data fetching, search state, and error handling. Call getAllProducts and searchProducts backend methods as needed."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /products that renders the Products page component, ensuring it's accessible from the main navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement order management with creation, tracking, and status updates",
+      "acceptanceCriteria": [
+        "Users can create new orders with customer details and selected products",
+        "Orders display customer information, products, quantities, and total price",
+        "Order status can be updated through defined workflow stages",
+        "Users can view order history and filter by status"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Orders.tsx",
+          "operation": "create",
+          "description": "Create orders page that fetches and displays all orders using getAllOrdersSortedByTimestamp backend method. Include filtering by order status and display customer name, product details (fetched via productId), quantity, total price, and current status. Reference the generated delivery truck icon at frontend/public/assets/generated/truck-icon.dim_128x128.png as a visual element."
+        },
+        {
+          "path": "frontend/src/components/OrderCard.tsx",
+          "operation": "create",
+          "description": "Create order card component displaying order details, customer information, product name, quantity, total price, and status badge. Include status update dropdown that calls updateOrderStatus backend method."
+        },
+        {
+          "path": "frontend/src/components/CreateOrderForm.tsx",
+          "operation": "create",
+          "description": "Create order form component with fields for selecting product (dropdown), quantity input, and customer name. On submit, call createOrder backend method with form data."
+        },
+        {
+          "path": "frontend/src/components/OrderStatusBadge.tsx",
+          "operation": "create",
+          "description": "Create status badge component that displays order status with appropriate color coding for pending, processing, shipped, and delivered states using Tailwind CSS classes."
+        },
+        {
+          "path": "frontend/src/hooks/useOrders.ts",
+          "operation": "create",
+          "description": "Create custom hook to manage order data fetching, status filtering, order creation, and status updates. Call getAllOrdersSortedByTimestamp, createOrder, and updateOrderStatus backend methods."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /orders that renders the Orders page component and ensure it's accessible from the main navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build supplier management interface for CRUD operations",
+      "acceptanceCriteria": [
+        "Users can add new suppliers with name, email, and contact information",
+        "Users can view a list of all suppliers",
+        "Users can edit supplier details",
+        "Each supplier shows associated products they provide"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Suppliers.tsx",
+          "operation": "create",
+          "description": "Create suppliers page that fetches and displays all suppliers using getAllSuppliers backend method. Include button to open add supplier form and display associated products for each supplier using getSupplierProducts backend method."
+        },
+        {
+          "path": "frontend/src/components/SupplierCard.tsx",
+          "operation": "create",
+          "description": "Create supplier card component displaying supplier name, contact information, and list of associated products. Include edit button to modify supplier details."
+        },
+        {
+          "path": "frontend/src/components/AddSupplierForm.tsx",
+          "operation": "create",
+          "description": "Create form component for adding new suppliers with fields for name and contact information. On submit, call addSupplier backend method."
+        },
+        {
+          "path": "frontend/src/hooks/useSuppliers.ts",
+          "operation": "create",
+          "description": "Create custom hook to manage supplier data fetching, creation, and associated products loading. Call getAllSuppliers, addSupplier, and getSupplierProducts backend methods."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /suppliers that renders the Suppliers page component and ensure it's accessible from the main navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create dashboard with key business metrics",
+      "acceptanceCriteria": [
+        "Dashboard displays product count, order statistics, and revenue metrics",
+        "Metrics update in real-time based on current data",
+        "Dashboard provides an at-a-glance overview of business performance"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "create",
+          "description": "Create dashboard page that fetches products and orders data using getAllProducts and getAllOrdersSortedByTimestamp backend methods. Calculate and display total products count, active orders count, pending orders count, and total revenue. Use the generated hero background image at frontend/public/assets/generated/hero-bg.dim_1200x600.png as a background element in the hero section."
+        },
+        {
+          "path": "frontend/src/components/MetricCard.tsx",
+          "operation": "create",
+          "description": "Create reusable metric card component to display individual statistics with title, value, and optional icon using Tailwind CSS styling."
+        },
+        {
+          "path": "frontend/src/hooks/useDashboardMetrics.ts",
+          "operation": "create",
+          "description": "Create custom hook to fetch and calculate dashboard metrics from backend data. Call getAllProducts and getAllOrdersSortedByTimestamp methods and compute total products, active orders, pending orders, and total revenue."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for / (root) that renders the Dashboard page component and ensure it's set as the default landing page. Wire dashboard into main navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Implement profit calculation for products and orders",
+      "acceptanceCriteria": [
+        "Products display calculated profit margin",
+        "Orders show total profit based on wholesale vs retail pricing",
+        "Profit calculations are accurate and automatically computed"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/profitCalculations.ts",
+          "operation": "create",
+          "description": "Create utility functions to calculate profit margin for products (retail price minus wholesale price) and total profit for orders (profit margin multiplied by quantity). Use these in product and order displays."
+        },
+        {
+          "path": "frontend/src/components/ProductCard.tsx",
+          "operation": "modify",
+          "description": "Add profit margin display to product card using the profitCalculations utility or by calling calculateProductProfit backend method for each product."
+        },
+        {
+          "path": "frontend/src/components/OrderCard.tsx",
+          "operation": "modify",
+          "description": "Add total profit calculation display to order card by fetching product details and computing (retailPrice - wholesalePrice) * quantity."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Design modern professional interface with sophisticated color palette",
+      "acceptanceCriteria": [
+        "Interface uses a cohesive color scheme throughout the application",
+        "Typography is clear and professional",
+        "Layout facilitates easy navigation between products, orders, and suppliers",
+        "Design conveys professionalism suitable for business software"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define global color palette using warm professional tones (avoiding blue and purple), set up typography with clear professional fonts, and establish base styling for the application using Tailwind CSS custom properties."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind configuration with custom color palette featuring warm professional tones (such as amber, orange, slate, and neutral grays), custom typography settings for clear readability, and any spacing/sizing customizations needed for business software aesthetic."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create main layout component with navigation sidebar or header that provides easy access to Dashboard, Products, Orders, and Suppliers sections. Apply consistent spacing, professional styling, and ensure responsive design using Tailwind CSS."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all routes in the Layout component to ensure consistent navigation and professional appearance across all pages."
+        }
+      ]
+    }
+  ]
+}

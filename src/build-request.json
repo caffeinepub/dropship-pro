@@ -1,0 +1,138 @@
+{
+  "kind": "build_request",
+  "title": "Create drop shipping management application",
+  "projectName": "DropShip Pro",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a product catalog system where users can browse and search products available for drop shipping, including product name, description, supplier information, wholesale price, and suggested retail price",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make an app about drop shipping"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can view a list of available products",
+        "Each product displays name, description, supplier, wholesale price, and suggested retail price",
+        "Users can search products by name or description",
+        "Product data is stored persistently in the backend"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement order management functionality allowing users to create, track, and manage customer orders with order status tracking (pending, processing, shipped, delivered)",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make an app about drop shipping"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can create new orders with customer details and selected products",
+        "Orders display customer information, products, quantities, and total price",
+        "Order status can be updated through defined workflow stages",
+        "Users can view order history and filter by status"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a supplier management interface to add, edit, and view supplier information including name, contact details, and associated products",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make an app about drop shipping"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can add new suppliers with name, email, and contact information",
+        "Users can view a list of all suppliers",
+        "Users can edit supplier details",
+        "Each supplier shows associated products they provide"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a dashboard displaying key metrics including total products, active orders, pending orders, and total revenue",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make an app about drop shipping"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard displays product count, order statistics, and revenue metrics",
+        "Metrics update in real-time based on current data",
+        "Dashboard provides an at-a-glance overview of business performance"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement profit calculation showing the difference between wholesale and retail prices for each product and order",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make an app about drop shipping"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Products display calculated profit margin",
+        "Orders show total profit based on wholesale vs retail pricing",
+        "Profit calculations are accurate and automatically computed"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Design a modern, professional interface with a clean visual theme that conveys trust and efficiency for e-commerce business management, using a sophisticated color palette (avoid blue and purple) with clear typography and intuitive navigation",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Interface uses a cohesive color scheme throughout the application",
+        "Typography is clear and professional",
+        "Layout facilitates easy navigation between products, orders, and suppliers",
+        "Design conveys professionalism suitable for business software"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use Motoko for backend implementation in a single actor",
+    "Use React with TypeScript for frontend",
+    "Style with Tailwind CSS",
+    "Do not modify Internet Identity integration hooks"
+  ],
+  "nonGoals": [
+    "Integration with external payment processors",
+    "Real-time shipping carrier APIs",
+    "Automated email notifications to customers",
+    "Multi-user authentication with role-based access control",
+    "Integration with external supplier APIs"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Modern e-commerce hero background with subtle geometric patterns in warm professional tones (hero-bg.dim_1200x600.png)",
+      "Simple package box icon for products section (package-icon.dim_128x128.png)",
+      "Delivery truck icon for orders section (truck-icon.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}
